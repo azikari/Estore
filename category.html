@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/category.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Estore<span>.</span></div>
+
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="category.html">Category</a>
+            <a href="#">Latest</a>
+            <a href="#">Blog</a>
+            <a href="#">Pages</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="search">
+                <input type="text" placeholder="Search products">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="circle">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+
+            <div class="circle">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Product Category</h1>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-left tabs-left">
+                <button class="tab active" data-category="men's clothing">Men's clothing</button>
+                <button class="tab" data-category="women's clothing">Women's clothing</button>
+                <button class="tab" data-category="electronics">Electronics</button>
+                <button class="tab" data-category="jewelery">Jewelery</button>
+            </div>
+
+            <div class="section-right">
+                <span class="sort-label">Sort by:</span>
+                <div class="custom-select-wrapper">
+                    <span class="selected-option">
+                        Featured
+                        <i class="dropdown-icon fa-solid fa-angle-down"></i>
+                    </span>
+                    <div class="options">
+                        <div class="option" data-value="all">Featured</div>
+                        <div class="option" data-value="az">Featured A-Z</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider-wrapper">
+            <div class="divider"></div>
+        </div>
+
+        <div class="product-grid" id="grid"></div>
+    </section>
+
+    <section class="offer" id="latest-offer">
+        <div class="offer-bg">
+            <div class="offer-inner">
+
+                <div class="offer-img">
+                    <img src="https://preview.colorlib.com/theme/estore/assets/img/collection/latest-man.png"
+                        alt="Latest Man">
+                </div>
+
+                <div class="offer-right">
+                    <div class="offer-text">
+                        <h2>Get Our<br>Latest Offers News</h2>
+                        <p>Subscribe news latter</p>
+                    </div>
+
+                    <div class="shop-form">
+                        <input type="email" placeholder="Your email here" id="hero">
+                        <button class="btn-shop">Shop Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="features">
+        <div class="features-container">
+
+            <div class="feature-item">
+                <i class="fa-solid fa-box"></i>
+                <h3>Free Shipping Method</h3>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+            </div>
+
+            <div class="feature-item">
+                <i class="fa-solid fa-unlock"></i>
+                <h3>Secure Payment System</h3>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+            </div>
+
+            <div class="feature-item">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <h3>Secure Payment System</h3>
+                <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="gallery-container">
+            <img src="https://preview.colorlib.com/theme/estore/assets/img/gallery/gallery1.jpg" alt="">
+            <img src="https://preview.colorlib.com/theme/estore/assets/img/gallery/gallery2.jpg" alt="">
+            <img src="https://preview.colorlib.com/theme/estore/assets/img/gallery/gallery3.jpg" alt="">
+            <img src="https://preview.colorlib.com/theme/estore/assets/img/gallery/gallery4.jpg" alt="">
+            <img src="https://preview.colorlib.com/theme/estore/assets/img/gallery/gallery5.jpg" alt="">
+        </div>
+    </section>
+    <section class="info">
+        <div class="info-wrap">
+
+            <div class="col brand">
+                <div class="logo">Estore<span>.</span></div>
+                <p>
+                    Lorem ipsum dolor sit amet,<br>
+                    consectetur adipisicing elit sed<br>
+                    do eiusmod tempor incididunt<br>
+                    ut labore.
+                </p>
+            </div>
+
+            <div class="col">
+                <h3>Quick Links</h3>
+                <a href="#hero">About</a>
+                <a href="#hero">Offers & Discounts</a>
+                <a href="#hero">Get Coupon</a>
+                <a href="#hero">Contact Us</a>
+            </div>
+
+            <div class="col">
+                <h3>New Products</h3>
+                <a href="#hero">Woman Cloth</a>
+                <a href="#hero">Fashion Accessories</a>
+                <a href="#hero">Man Accessories</a>
+                <a href="#hero">Rubber made Toys</a>
+            </div>
+
+            <div class="col support">
+                <h3>Support</h3>
+                <a href="#hero">Frequently Asked Questions</a>
+                <a href="#hero">Terms & Conditions</a>
+                <a href="#hero">Privacy Policy</a>
+                <a href="#hero">Privacy Policy</a>
+                <a href="#hero">Report a Payment Issue</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-wrap">
+            <div class="footer-left">
+                <p>
+                    Copyright &copy;2026 All rights reserved | This template is made with
+                    <i class="fa-regular fa-heart"></i>
+                    by <a href="https://colorlib.com/" target="_blank">Karima</a>
+                </p>
+            </div>
+
+            <div class="footer-right">
+                <a href="#hero"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#hero"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#hero"><i class="fa-brands fa-behance"></i></a>
+                <a href="#hero"><i class="fa-solid fa-globe"></i></a>
+            </div>
+        </div>
+
+        <a href="#hero" class="back-to-top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/category.js"></script>
+</body>
+
+</html>
