@@ -11,14 +11,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 240px;
-    background: #fff;
+    padding: 30px 240px;
+    background: transparent;
+    position: relative;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.header.header-scrolled {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 15px 240px;
     z-index: 999;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -98,7 +105,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
 }
 
 .hero-content h1 {

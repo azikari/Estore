@@ -95,12 +95,15 @@ tabs.forEach(tab => {
 
 loadLatestProducts("men's clothing");
 
-// const header = document.querySelector('.header');
+const header = document.querySelector('.header');
 
-// window.addEventListener('scroll', () => {
-//     if (window.scrollY > 50) {
-//         header.classList.add('header-scrolled');
-//     } else {
-//         header.classList.remove('header-scrolled');
-//     }
-// });
+window.addEventListener('scroll', () => {
+    const headerHeight = header.offsetHeight;
+    const triggerPoint = headerHeight / 2;
+
+    if (window.scrollY > triggerPoint) {
+        header.classList.add('header-scrolled');
+    } else {
+        header.classList.remove('header-scrolled');
+    }
+});
