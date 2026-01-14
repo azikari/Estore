@@ -113,7 +113,7 @@
     padding: 0 80px 0;
     position: relative;
     overflow: hidden;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
 }
 
 .hero-content {
@@ -676,7 +676,6 @@
     transition: transform 0.2s;
 }
 
-
 .features {
     padding: 120px 0;
     background: #fff;
@@ -1011,7 +1010,7 @@
     text-align: left;
     margin: 0; 
     position: relative;
-    left: -220px;
+    left: -200px;
   }
 
   .banner-content h2 {
@@ -1196,4 +1195,18 @@
   .offer-text p {
     font-size: 12px;
   }
+}
+
+@media (max-width: 992px) {
+    .header.header-scrolled {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 14px 16px;
+        background: #fff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        box-sizing: border-box;
+    }
 }

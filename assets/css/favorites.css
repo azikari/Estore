@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.favorites-section {
+    display: block;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.favorites-title {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.header a.circle i.fa-heart:hover,
+.product-card .wishlist-icon:hover {
+    transform: scale(1.1);
+}
+
+.header a.circle i.fa-heart.active,
+.product-card .wishlist-icon.active {
+    transform: scale(1.2);
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+}
+
+.product-card {
+    background: #f8f9fa;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 35px 25px 25px;
+    text-align: center;
+    width: calc(33.333% - 26.66px);
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 280px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: auto;
+}
+
+.product-card p {
+    font-size: 18px;
+    color: #007bff;
+    font-weight: 600;
+}
+
+.badge-new {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    background: red;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 25px;
+}
+
+.product-card .wishlist-icon {
+    top: 18px;
+    right: 18px;
+    font-size: 20px;
+    color: #aaa;
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.product-card .wishlist-icon:hover {
+    transform: scale(1.1);
+}
+
+.product-card .wishlist-icon.active {
+    color: red;
+    font-weight: 900;
+}
+
+.header a.circle i.fa-heart {
+    color: #777;
+}
+
+.stars {
+    display: flex;
+    gap: 4px;
+    font-size: 20px;
+    justify-content: center;
+    margin: 12px 0;
+}
+
+.star {
+    position: relative;
+    font-size: 22px;
+    color: #ddd;
+    line-height: 1;
+}
+
+.star::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--fill);
+    overflow: hidden;
+    color: gold;
+}
+
+.back-btn-wrapper {
+    max-width: 1200px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 240px;
+}
+
+.clear-btn-wrapper {
+    max-width: 1200px;
+    margin: 10px auto 20px auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+#backBtn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#backBtn:hover {
+    background-color: #0056b3;
+}
+
+#clearFavoritesBtn {
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#clearFavoritesBtn:hover {
+    background-color: #ff1a1a;
+}
+

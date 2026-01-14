@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorites</title>
+    <link rel="stylesheet" href="./assets/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/favorites.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">Estore<span>.</span></div>
+
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="all.html">All</a>
+            <a href="category.html">Category</a>
+            <a href="#">Latest</a>
+            <a href="#">Blog</a>
+            <a href="#">Pages</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <div class="header-right">
+            <a href="favorites.html" class="circle">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+
+            <div class="circle">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="favorites-section">
+        <div class="back-btn-wrapper">
+            <button id="backBtn">Back</button>
+        </div>
+
+        <h2 class="favorites-title">My Wishlist</h2>
+
+        <div class="clear-btn-wrapper">
+            <button id="clearFavoritesBtn">Delete All</button>
+        </div>
+
+        <div id="product-grid" class="product-grid"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-wrap">
+            <div class="footer-left">
+                <p>
+                    Copyright &copy;2026 All rights reserved | This template is made with
+                    <i class="fa-regular fa-heart"></i>
+                    by <a href="https://colorlib.com/" target="_blank">Karima</a>
+                </p>
+            </div>
+
+            <div class="footer-right">
+                <a href="#hero"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#hero"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#hero"><i class="fa-brands fa-behance"></i></a>
+                <a href="#hero"><i class="fa-solid fa-globe"></i></a>
+            </div>
+        </div>
+
+        <a href="#hero" class="back-to-top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/favorites.js"></script>
+
+</body>
+
+</html>

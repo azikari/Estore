@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/all.css">
 </head>
 
 <body>
-
     <header class="header">
         <div class="logo">Estore<span>.</span></div>
 
@@ -27,15 +25,10 @@
             <a href="#">Contact</a>
         </nav>
 
-        <div class="right">
-            <div class="search">
-                <input type="text" placeholder="Search products">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-
-            <div class="circle">
+        <div class="header-right">
+            <a href="favorites.html" class="circle">
                 <i class="fa-regular fa-heart"></i>
-            </div>
+            </a>
 
             <div class="circle">
                 <i class="fa-solid fa-cart-shopping"></i>
@@ -43,121 +36,53 @@
         </div>
     </header>
 
-    <section class="hero" id="hero">
+    <section class="hero">
         <div class="hero-content">
-            <div class="hero-image">
-                <img src="https://preview.colorlib.com/theme/estore/assets/img/hero/hero_man.png" alt="">
-            </div>
-
-            <div class="hero-text">
-                <span class="discount">60% Discount</span>
-                <h1>Winter Collection</h1>
-                <p>Best Cloth Collection By 2026!</p>
-
-                <div class="button-card">
-                    <button class="btn btn-infinite">Shop Now</button>
-                </div>
-            </div>
+            <h1>All Products</h1>
         </div>
     </section>
 
-    <section class="shop-category">
-        <div class="container">
-            <h2 class="section-title">Shop by Category</h2>
-            <div class="product-grid" id="product-grid">
-            </div>
-        </div>
-    </section>
+    <section class="section">
+        <h2 class="section-title">Find The Best Products From Our Shop</h2>
 
-    <section class="latest-products">
-        <div class="latest-inner">
-            <div class="latest-header">
-                <h2>Latest Products</h2>
-
-                <div class="tabs">
-                    <button class="tab active" data-category="men's clothing">Men's clothing</button>
-                    <button class="tab" data-category="women's clothing">Women's clothing</button>
-                    <button class="tab" data-category="electronics">Electronics</button>
-                    <button class="tab" data-category="jewelery">Jewelery</button>
-                </div>
+        <div class="search-sort-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search products...">
+                <button id="searchBtn" class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
             </div>
 
-            <div class="divider"></div>
-
-            <div class="product-grid" id="latest-grid"></div>
-        </div>
-    </section>
-
-    <section class="banner">
-        <div class="banner-bg">
-            <div class="banner-inner">
-
-                <div class="banner-inner">
-                    <div class="banner-image">
-                        <img src="https://preview.colorlib.com/theme/estore/assets/img/categori/card-man.png" alt=""
-                            class="man-img">
+            <div class="section-right">
+                <span class="sort-label">Sort by:</span>
+                <div class="custom-select-wrapper" id="sortWrapper">
+                    <div class="selected-option" id="selectedOption">
+                        Featured <i class="fa-solid fa-chevron-down dropdown-icon"></i>
                     </div>
-
-                    <div class="side-text outline-text">
-                        <span>MANZ</span>
+                    <div class="options" id="sortOptions">
+                        <div class="option selected" data-value="featured">Featured</div>
+                        <div class="option" data-value="a-z">A–Z</div>
+                        <div class="option" data-value="z-a">Z-A</div>
+                        <div class="option" data-value="low-high">Price Low to High</div>
+                        <div class="option" data-value="high-low">Price High to Low</div>
+                        <div class="option rating-toggle">
+                            Rating
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                        <div class="rating-options">
+                            <div class="rating-option" data-rating="2">2 Stars & Up</div>
+                            <div class="rating-option" data-rating="3">3 Stars & Up</div>
+                            <div class="rating-option" data-rating="4">4 Stars & Up</div>
+                            <div class="rating-option" data-rating="4.5">4.5 Stars & Up</div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="banner-content">
-                    <h2>
-                        Find The Best Product <br>
-                        From Our Shop
-                    </h2>
-                    <p>Designers who are interesten creating state ofthe.</p>
-                    <a href="#hero" class="black-btn">Shop Now</a>
-                </div>
-
-                <img src="https://preview.colorlib.com/theme/estore/assets/img/categori/card-shape.png" alt=""
-                    class="shape-img">
             </div>
         </div>
+
+        <div class="product-grid" id="product-grid"></div>
     </section>
 
-    <section class="collection-section">
-        <div class="collection-container">
-
-            <div class="collection-left">
-                <h2>Best Collection<br>of This Month</h2>
-                <p>Designers who are interesten crea.</p>
-                <div class="button-card">
-                    <button class="btn btn-infinite">Shop Now</button>
-                </div>
-                <img src="https://preview.colorlib.com/theme/estore/assets/img/collection/collection1.png" alt=""
-                    class="collection-left-img">
-            </div>
-
-            <div class="collection-center">
-                <div class="man-block">
-                    <img src="https://preview.colorlib.com/theme/estore/assets/img/collection/collection2.png" alt=""
-                        class="collection-man">
-                </div>
-            </div>
-
-            <div class="collection-right">
-                <div class="right-item">
-                    <img src="https://preview.colorlib.com/theme/estore/assets/img/collection/collection3.png" alt="">
-                    <p class="text-black">Menz Winter<br>Jacket</p>
-                </div>
-
-                <div class="right-item">
-                    <img src="https://preview.colorlib.com/theme/estore/assets/img/collection/collection4.png" alt="">
-                    <p class="text-white bg-blue">Menz Winter<br>Jacket</p>
-                </div>
-
-                <div class="right-item">
-                    <img src="https://preview.colorlib.com/theme/estore/assets/img/collection/collection5.png" alt="">
-                    <p class="text-black">Menz Winter<br>Jacket</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
 
     <section class="offer" id="latest-offer">
         <div class="offer-bg">
@@ -206,6 +131,7 @@
 
         </div>
     </section>
+
 
     <section class="gallery">
         <div class="gallery-container">
@@ -282,10 +208,8 @@
 
 
 
-
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./assets/js/app.js"></script>
-
+    <script src="./assets/js/all.js"></script>
 </body>
 
 </html>
