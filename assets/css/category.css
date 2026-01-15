@@ -58,6 +58,23 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-left: -20px;
+}
+
+.btn-signin {
+    padding: 10px 30px;
+    background: #007bff;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-signin:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
 }
 
 .search {

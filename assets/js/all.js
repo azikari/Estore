@@ -14,6 +14,7 @@ let allProducts = [];
 let filteredProducts = [];
 let currentRatingFilter = 0;
 let wishlist = JSON.parse(localStorage.getItem("favorites")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function renderStars(rate) {
     let html = "";
@@ -47,11 +48,13 @@ function renderProducts(products) {
         productGrid.innerHTML = "<p style='font-size:20px;text-align:center;'>Product not found</p>";
         return;
     }
+
     products.forEach(product => {
         const card = document.createElement("div");
         card.className = "product-card";
         const isNew = newProductIds.includes(product.id);
         const isFav = wishlist.includes(product.id);
+
         card.innerHTML = `
             ${isNew ? `<span class="badge-new">New</span>` : ""}
             <i class="fa-${isFav ? "solid" : "regular"} fa-heart wishlist-icon ${isFav ? "active" : ""}" data-id="${product.id}"></i>
@@ -59,14 +62,27 @@ function renderProducts(products) {
             <h3>${product.title}</h3>
             <div class="stars">${renderStars(product.rating.rate)}</div>
             <p>$${product.price}</p>
+            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
         `;
+
         productGrid.appendChild(card);
     });
+
     document.querySelectorAll(".wishlist-icon").forEach(icon => {
         const id = parseInt(icon.dataset.id);
         icon.addEventListener("click", e => {
             e.stopPropagation();
             toggleWishlist(id, icon);
+        });
+    });
+
+    document.querySelectorAll(".add-to-cart").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const id = parseInt(btn.dataset.id);
+            cart.push(id);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            window.dispatchEvent(new Event('cartUpdated')); // добавлено для реального обновления счетчика
+            alert("Product added to cart!");
         });
     });
 }
@@ -98,6 +114,7 @@ searchBtn.addEventListener("click", filterProducts);
 function applyFiltersAndSort() {
     const selectedSort = document.querySelector(".option.selected")?.dataset.value || "featured";
     let result = [...filteredProducts];
+
     switch (selectedSort) {
         case "a-z":
             result.sort((a, b) => a.title.localeCompare(b.title));
@@ -112,10 +129,12 @@ function applyFiltersAndSort() {
             result.sort((a, b) => b.price - a.price);
             break;
     }
+
     if (currentRatingFilter > 0) {
         result = result.filter(p => p.rating.rate >= currentRatingFilter);
         result.sort((a, b) => a.rating.rate - b.rating.rate);
     }
+
     renderProducts(result);
 }
 
@@ -191,6 +210,21 @@ document.addEventListener("click", e => {
         icon.classList.remove("fa-angle-up");
         icon.classList.add("fa-angle-down");
     }
+});
+
+function updateCartCount() {
+    const cartCountElem = document.getElementById("cart-count");
+    if (!cartCountElem) return;
+    const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    cartCountElem.textContent = cartData.length;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+});
+
+window.addEventListener('cartUpdated', () => {
+    updateCartCount();
 });
 
 const header = document.querySelector(".header");

@@ -21,7 +21,6 @@ clearFavoritesBtn.addEventListener("click", () => {
             localStorage.setItem("favorites", JSON.stringify(wishlist));
             renderProducts([]);
             updateWishlistIcon();
-
             Swal.fire("Deleted!", "All favorites have been removed.", "success");
         } else if (result.isDenied) {
             Swal.fire("Cancelled", "Favorites are not deleted", "info");
@@ -76,6 +75,7 @@ function renderProducts(products) {
             <h3>${product.title}</h3>
             <div class="stars">${renderStars(product.rating.rate)}</div>
             <p>$${product.price}</p>
+            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
         `;
         productGrid.appendChild(card);
     });
@@ -87,6 +87,14 @@ function renderProducts(products) {
             removeFromFavorites(id);
         });
     });
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", e => {
+            e.stopPropagation();
+            const id = parseInt(button.dataset.id);
+            addToCart(id);
+        });
+    });
 }
 
 function removeFromFavorites(id) {
@@ -94,6 +102,38 @@ function removeFromFavorites(id) {
     localStorage.setItem("favorites", JSON.stringify(wishlist));
     loadFavorites();
 }
+
+function addToCart(id) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    cart.push(id);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    window.dispatchEvent(new Event('cartUpdated'));
+
+    Swal.fire({
+        icon: "success",
+        title: "Added!",
+        text: "Product added to cart",
+        timer: 1200,
+        showConfirmButton: false
+    });
+}
+
+function updateCartCount() {
+    const cartCountElem = document.getElementById("cart-count");
+    if (!cartCountElem) return;
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cartCountElem.textContent = cart.length;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+});
+
+window.addEventListener('cartUpdated', () => {
+    updateCartCount();
+});
 
 const header = document.querySelector(".header");
 window.addEventListener("scroll", () => {
