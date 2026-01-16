@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estore</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="./assets/css/registration.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
 </head>
+
 <body>
-<div class="form-container">
-        <h2 class="form-title">Login</h2>
+
+    <div class="form-container">
+        <h2 class="form-title">Log In</h2>
 
         <form class="form">
-            <input type="text" placeholder="Username or Email" required>
-            <input type="password" placeholder="Password" required>
-            <p>Didn't have an account? <a href="register.html">Register now</a> </p>
+            <div class="form-group">
+                <label for="login">Username or Email</label>
+                <input id="login" type="text" placeholder="Enter your username or email" required>
+            </div>
+
+            <div class="form-group password-group">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input id="password" type="password" placeholder="Enter your password" required>
+                    <i class="fa-solid fa-eye-slash toggle-password"></i>
+                </div>
+            </div>
+
+            <p>Don't have an account? <a href="register.html">Register Now</a></p>
 
             <button type="submit" class="btn-primary">Get Started</button>
         </form>
     </div>
 
+
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./assets/js/registration.js"></script>
+    <script src="./assets/js/login.js"></script>
 
 </body>
+
 </html>
